@@ -4,11 +4,6 @@ public class Main {
 
         System.out.println("FIlme: Top Gun: Maverick");
 
-        int realease_year = 2022;
-        System.out.println("Ano de Lançamento: " + realease_year);
-
-        boolean include_plan = true;
-        double film_grade = 8.1;
         String synopsis;
         synopsis = "Filme de aventura";
 
