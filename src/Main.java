@@ -7,7 +7,6 @@ public class Main {
         String synopsis;
         synopsis = "Filme de aventura";
 
-        System.out.println("Nota: " + film_grade);
         System.out.println("Sinopse: " + synopsis);
     }
 }
