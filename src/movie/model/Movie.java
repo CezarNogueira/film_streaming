@@ -1,22 +1,24 @@
-public class Movie {
-    String name;
-    int releaseYear;
-    boolean includePlan;
-    private int allRating;
-    double meanRating;
-    int duration;
+package movie.model;
 
-    void infoMovie() {
+public class Movie {
+    public String name;
+    public int releaseYear;
+    public boolean includePlan;
+    private int allRating;
+    public double meanRating;
+    public int duration;
+
+    public void infoMovie() {
         System.out.println("Nome do Filme: " + name);
         System.out.println("Ano de Lançamento: " + releaseYear);
     }
 
-    void rateMovie(double rating) {
+    public void rateMovie(double rating) {
         allRating++;
         meanRating = rating / allRating;
     }
 
-    int getAllRating() {
+    public int getAllRating() {
         return allRating;
     }
 }
