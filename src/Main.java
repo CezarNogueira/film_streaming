@@ -6,8 +6,6 @@ public class Main {
         myMovie.includePlan = true;
         myMovie.meanRating = 3.5;
 
-        System.out.println(myMovie.name);
-        System.out.println(myMovie.releaseYear);
-        System.out.println(myMovie.meanRating);
+        myMovie.infoMovie();
     }
 }
