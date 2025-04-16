@@ -2,7 +2,7 @@ public class Movie {
     String name;
     int releaseYear;
     boolean includePlan;
-    int allRating;
+    private int allRating;
     double meanRating;
     int duration;
 
@@ -14,5 +14,9 @@ public class Movie {
     void rateMovie(double rating) {
         allRating++;
         meanRating = rating / allRating;
+    }
+
+    int getAllRating() {
+        return allRating;
     }
 }

@@ -9,5 +9,6 @@ public class Main {
         myMovie.rateMovie(3.5);
         myMovie.rateMovie(4.5);
         System.out.println(myMovie.meanRating);
+        System.out.println(myMovie.getAllRating());
     }
 }
