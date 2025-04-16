@@ -1,12 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Bem vindo ao Screen Match");
+        Movie myMovie = new Movie();
+        myMovie.name = "Harry Potter";
+        myMovie.releaseYear = 2014;
+        myMovie.includePlan = true;
+        myMovie.meanRating = 3.5;
 
-        System.out.println("FIlme: Top Gun: Maverick");
-
-        String synopsis;
-        synopsis = "Filme de aventura";
-
-        System.out.println("Sinopse: " + synopsis);
+        System.out.println(myMovie.name);
+        System.out.println(myMovie.releaseYear);
+        System.out.println(myMovie.meanRating);
     }
 }
