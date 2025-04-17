@@ -1,19 +1,18 @@
-package movie.model;
+package filmstreaming.model;
 
-public class Movie {
+public class Title {
     private String name;
     private int releaseYear;
     private boolean includePlan;
     private int allRating;
     private double meanRating;
-    private int duration;
 
-    public void infoMovie() {
-        System.out.println("Nome do Filme: " + name);
-        System.out.println("Ano de Lançamento: " + releaseYear);
+    public void infoTitle() {
+        System.out.println(name);
+        System.out.println(releaseYear);
     }
 
-    public void rateMovie(double rating) {
+    public void rateTitle(double rating) {
         allRating++;
         meanRating = rating / allRating;
     }
@@ -36,10 +35,6 @@ public class Movie {
 
     public void setMeanRating(double meanRating) {
         this.meanRating = meanRating;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public void setReleaseYear(int releaseYear) {
