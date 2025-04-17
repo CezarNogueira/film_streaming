@@ -9,6 +9,6 @@ public class Movie extends Title implements Classifiable {
 
     @Override
     public int getClassifiable() {
-        return 0;
+        return (int) getMeanRating() / 2;
     }
 }
