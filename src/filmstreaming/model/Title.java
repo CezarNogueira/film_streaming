@@ -6,10 +6,15 @@ public class Title {
     private boolean includePlan;
     private int allRating;
     private double meanRating;
+    private int minutesTime;
 
     public void infoTitle() {
         System.out.println(name);
         System.out.println(releaseYear);
+    }
+
+    public int getMinutesTime() {
+        return minutesTime;
     }
 
     public void rateTitle(double rating) {
