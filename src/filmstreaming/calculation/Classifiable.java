@@ -1,4 +1,4 @@
-package filmstreaming.model;
+package filmstreaming.calculation;
 
 public interface Classifiable {
     int getClassifiable();

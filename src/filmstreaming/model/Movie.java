@@ -1,5 +1,7 @@
 package filmstreaming.model;
 
+import filmstreaming.calculation.Classifiable;
+
 public class Movie extends Title implements Classifiable {
     private int durationMovie;
 
