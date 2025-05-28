@@ -6,20 +6,26 @@ public class Title {
     private boolean includePlan;
     private int allRating;
     private double meanRating;
+    private double sumRating;
     private int minutesTime;
 
     public void infoTitle() {
-        System.out.println(name);
-        System.out.println(releaseYear);
+        System.out.println("Nome: " + name);
+        System.out.println("Ano de lançamento: " + releaseYear);
     }
 
     public int getMinutesTime() {
         return minutesTime;
     }
 
+    public void setMinutesTime(int minutesTime) {
+        this.minutesTime = minutesTime;
+    }
+
     public void rateTitle(double rating) {
-        allRating++;
-        meanRating = rating / allRating;
+        this.sumRating += rating;
+        this.allRating++;
+        this.meanRating = this.sumRating / this.allRating;
     }
 
     public int getAllRating() {
@@ -30,6 +36,18 @@ public class Title {
         return meanRating;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public boolean isIncludePlan() {
+        return includePlan;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -38,11 +56,12 @@ public class Title {
         this.includePlan = includePlan;
     }
 
-    public void setMeanRating(double meanRating) {
-        this.meanRating = meanRating;
-    }
-
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + releaseYear + ")";
     }
 }
