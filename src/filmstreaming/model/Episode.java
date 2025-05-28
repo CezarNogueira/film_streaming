@@ -6,14 +6,14 @@ public class Episode implements Classifiable {
     private int number;
     private String name;
     private Series series;
-    private int totalViews;
+    private int allViews;
 
-    public int getTotalViews() {
-        return totalViews;
+    public int getAllViews() {
+        return allViews;
     }
 
-    public void setTotalViews(int totalViews) {
-        this.totalViews = totalViews;
+    public void setAllViews(int totalViews) {
+        this.allViews = totalViews;
     }
 
     public int getNumber() {
@@ -42,7 +42,7 @@ public class Episode implements Classifiable {
 
     @Override
     public int getClassifiable() {
-        if (totalViews > 100) {
+        if (allViews > 100) {
             return 4;
         } else {
             return 2;

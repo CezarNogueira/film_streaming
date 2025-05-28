@@ -60,6 +60,20 @@ public class Title {
         this.releaseYear = releaseYear;
     }
 
+    public void showTechnicalSheet() {
+        System.out.println("Nome do filme: " + name);
+        System.out.println("Ano de lançamento: " + releaseYear);
+    }
+
+    public void rate(double grade) {
+        sumRating += grade;
+        allRating++;
+    }
+
+    public double mediaRating() {
+        return sumRating / allRating;
+    }
+
     @Override
     public String toString() {
         return name + " (" + releaseYear + ")";
