@@ -4,6 +4,8 @@ import filmstreaming.model.Episode;
 import filmstreaming.model.Movie;
 import filmstreaming.model.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Movie myMovie = new Movie();
@@ -47,5 +49,18 @@ public class Main {
         episode.setSeries(lost);
         episode.setAllViews(300);
         filtro.filter(episode);
+
+        var movieTest = new Movie();
+        movieTest.setMinutesTime(200);
+        movieTest.setName("Avatar");
+        movieTest.setReleaseYear(2023);
+        movieTest.rate(10);
+
+        ArrayList<Movie> movieList = new ArrayList<>();
+        movieList.add(movieTest);
+        movieList.add(movieTest);
+        movieList.add(outherMovie);
+        System.out.println("Tamanho da Lista: " + movieList.size());
+        System.out.println("Primeiro Filme: " + movieList.get(0).getName());
     }
 }
