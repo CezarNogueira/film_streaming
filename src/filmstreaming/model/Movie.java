@@ -3,6 +3,11 @@ package filmstreaming.model;
 import filmstreaming.calculation.Classifiable;
 
 public class Movie extends Title implements Classifiable {
+
+    public Movie(String name) {
+        this.setName(name);
+    }
+
     private int durationMovie;
 
     public int getDurationMovie() {

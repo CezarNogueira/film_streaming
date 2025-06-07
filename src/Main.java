@@ -8,23 +8,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
 
-        myMovie.showTechnicalSheet();
-
-        Series lost = new Series();
-
-        Movie outherMovie = new Movie();
-
-        TimeCalculator calculator = new TimeCalculator();
-
-        RecommendationFilter filtro = new RecommendationFilter();
-
-        Episode episode = new Episode();
-
-        var favorite = new Movie();
+        var favorite = new Movie("Avatar");
         favorite.setMinutesTime(200);
-        favorite.setName("Avatar");
         favorite.setReleaseYear(2023);
         favorite.rate(10);
 
