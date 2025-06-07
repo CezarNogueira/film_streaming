@@ -4,11 +4,11 @@ import filmstreaming.calculation.Classifiable;
 
 public class Movie extends Title implements Classifiable {
 
-    public Movie(String name) {
-        this.setName(name);
-    }
-
     private int durationMovie;
+
+    public Movie(String name, int releaseYear) {
+        super(name, releaseYear);
+    }
 
     public int getDurationMovie() {
         return durationMovie;
@@ -21,6 +21,6 @@ public class Movie extends Title implements Classifiable {
 
     @Override
     public String toString() {
-        return "Movie: " + this.getName() + " (" + this.getReleaseYear() + ") ";
+        return "Movie: " + this.getName() + " (" + this.getReleaseYear() + ")";
     }
 }

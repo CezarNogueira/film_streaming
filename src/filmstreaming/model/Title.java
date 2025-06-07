@@ -1,6 +1,11 @@
 package filmstreaming.model;
 
 public class Title {
+    public Title(String name, int releaseYear) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+    }
+
     private String name;
     private int releaseYear;
     private boolean includePlan;

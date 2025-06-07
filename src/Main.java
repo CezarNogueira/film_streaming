@@ -9,13 +9,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        var favorite = new Movie("Avatar");
-        favorite.setMinutesTime(200);
-        favorite.setReleaseYear(2023);
-        favorite.rate(10);
+        Series Lost = new Series("Lost", 2011);
+
+        var favoriteMovie = new Movie("Avatar", 2023);
+        favoriteMovie.setMinutesTime(200);
+        favoriteMovie.rate(10);
 
         ArrayList<Movie> movieList = new ArrayList<>();
-        movieList.add(favorite);
+        movieList.add(favoriteMovie);
         System.out.println("Tamanho da Lista: " + movieList.size());
         System.out.println("Primeiro Filme: " + movieList.get(0));
         System.out.println(movieList);
