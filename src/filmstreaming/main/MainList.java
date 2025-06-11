@@ -13,13 +13,18 @@ public class MainList {
         var favoriteMovie = new Movie("Avatar", 2023);
         Series lost = new Series("Lost", 2000);
 
+        Movie m1 = favoriteMovie;
+
         ArrayList<Title> list = new ArrayList<>();
         list.add(favoriteMovie);
         System.out.println("Tamanho da Lista: " + list.size());
         System.out.println("Primeiro Filme: " + list.getFirst());
         System.out.println(lost);
         for (Title item: list) {
-            System.out.println(item);
+            System.out.println(item.getName());
+            if (item instanceof Movie movie && movie.getClassifiable() > 2) {
+                System.out.println("Classificação: " + movie.getClass());
+            }
         }
     }
 }
