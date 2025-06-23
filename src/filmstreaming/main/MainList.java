@@ -4,7 +4,9 @@ import filmstreaming.model.Series;
 import filmstreaming.model.Movie;
 import filmstreaming.model.Title;
 
+import java.net.SocketOption;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainList {
     public static void main(String[] args) {
@@ -26,5 +28,14 @@ public class MainList {
                 System.out.println("Classificação: " + movie.getClass());
             }
         }
+
+        ArrayList<String> searchArtist = new ArrayList<>();
+        searchArtist.add("Paulo Silva");
+        searchArtist.add("Adam Sandler");
+        searchArtist.add("Joao Lima");
+        System.out.println(searchArtist);
+        Collections.sort(searchArtist);
+        System.out.println("Depois da Ordenação:");
+        System.out.println(searchArtist);
     }
 }
