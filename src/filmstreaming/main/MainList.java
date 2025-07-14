@@ -21,7 +21,6 @@ public class MainList {
         list.add(favoriteMovie);
         System.out.println("Tamanho da Lista: " + list.size());
         System.out.println(list.getFirst());
-        System.out.println(lost);
         for (Title item: list) {
             System.out.println(item.getName());
             if (item instanceof Movie movie && movie.getClassifiable() > 2) {
@@ -30,12 +29,8 @@ public class MainList {
         }
 
         ArrayList<String> searchArtist = new ArrayList<>();
-        searchArtist.add("Paulo Silva");
-        searchArtist.add("Adam Sandler");
-        searchArtist.add("Joao Lima");
-        System.out.println(searchArtist);
         Collections.sort(searchArtist);
-        System.out.println("Depois da Ordenação:");
+        System.out.println("Elenco:");
         System.out.println(searchArtist);
     }
 }
