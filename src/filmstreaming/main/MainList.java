@@ -20,7 +20,7 @@ public class MainList {
         ArrayList<Title> list = new ArrayList<>();
         list.add(favoriteMovie);
         System.out.println("Tamanho da Lista: " + list.size());
-        System.out.println("Primeiro Filme: " + list.getFirst());
+        System.out.println(list.getFirst());
         System.out.println(lost);
         for (Title item: list) {
             System.out.println(item.getName());
