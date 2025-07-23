@@ -1,6 +1,6 @@
 package filmstreaming.model;
 
-public class Title {
+public class Title implements Comparable<Title> {
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
@@ -77,6 +77,10 @@ public class Title {
 
     public double mediaRating() {
         return sumRating / allRating;
+    }
+
+    public int compareTo(Title otherTitle) {
+        return this.getName().compareTo(otherTitle.getName());
     }
 
     @Override
