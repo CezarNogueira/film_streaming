@@ -1,12 +1,15 @@
 package filmstreaming.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Title implements Comparable<Title> {
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
     }
-
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int releaseYear;
     private boolean includePlan;
     private int allRating;
@@ -79,12 +82,15 @@ public class Title implements Comparable<Title> {
         return sumRating / allRating;
     }
 
+    @Override
     public int compareTo(Title otherTitle) {
         return this.getName().compareTo(otherTitle.getName());
     }
 
     @Override
     public String toString() {
-        return name + " (" + releaseYear + ")";
+
+        return "Nome: '" + name + '\'' +
+                ", Ano de Lançamento: " + releaseYear;
     }
 }
