@@ -17,6 +17,12 @@ public class Title implements Comparable<Title> {
     private double sumRating;
     private int minutesTime;
 
+    public Title(OmdbTitle myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.releaseYear = Integer.valueOf(myTitleOmdb.year());
+        this.minutesTime = Integer.valueOf(myTitleOmdb.runtime().substring(0, 2));
+    }
+
     public void infoTitle() {
         System.out.println("Nome: " + name);
         System.out.println("Ano de lançamento: " + releaseYear);
@@ -91,6 +97,6 @@ public class Title implements Comparable<Title> {
     public String toString() {
 
         return "Nome: '" + name + '\'' +
-                ", Ano de Lançamento: " + releaseYear;
+                ", Ano de Lançamento: " + releaseYear + "," + "Duração:" + minutesTime;
     }
 }

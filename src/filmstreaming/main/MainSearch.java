@@ -1,6 +1,10 @@
 package filmstreaming.main;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import filmstreaming.model.OmdbTitle;
 import filmstreaming.model.Title;
 
 import java.io.IOException;
@@ -28,8 +32,11 @@ public class MainSearch {
         String json = response.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        Title myTitle = gson.fromJson(json, Title.class);
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+
+        OmdbTitle myTitleOmdb = gson.fromJson(json, OmdbTitle.class);
+        System.out.println(myTitleOmdb);
+        Title myTitle = new Title(myTitleOmdb);
         System.out.println(myTitle);
     }
 }
