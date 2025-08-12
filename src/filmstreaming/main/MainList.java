@@ -10,27 +10,15 @@ import java.util.Collections;
 
 public class MainList {
     public static void main(String[] args) {
-        Movie myMovie = new Movie("Avatar", 2023);
         Movie outherMovie = new Movie("O Poderoso Chefão", 1970);
         var favoriteMovie = new Movie("Avatar", 2023);
-        Series lost = new Series("Lost", 2000);
-
-        Movie m1 = favoriteMovie;
+        var favoriteSeries = new Series("Lost", 2000);
 
         ArrayList<Title> list = new ArrayList<>();
         list.add(favoriteMovie);
-        System.out.println("Tamanho da Lista: " + list.size());
-        System.out.println(list.getFirst());
-        for (Title item: list) {
-            System.out.println(item.getName());
-            if (item instanceof Movie movie && movie.getClassifiable() > 2) {
-                System.out.println("Classificação: " + movie.getClass());
-            }
-        }
-
-        ArrayList<String> searchArtist = new ArrayList<>();
-        Collections.sort(searchArtist);
-        System.out.println("Elenco:");
-        System.out.println(searchArtist);
+        list.add(outherMovie);
+        list.add(favoriteSeries);
+        Collections.sort(list);
+        System.out.println(list);
     }
 }

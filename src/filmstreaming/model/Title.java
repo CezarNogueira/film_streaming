@@ -1,18 +1,27 @@
 package filmstreaming.model;
 
-public class Title {
+import com.google.gson.annotations.SerializedName;
+
+public class Title implements Comparable<Title> {
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
     }
-
+    @SerializedName("Title")
     private String name;
+    @SerializedName("Year")
     private int releaseYear;
     private boolean includePlan;
     private int allRating;
     private double meanRating;
     private double sumRating;
     private int minutesTime;
+
+    public Title(OmdbTitle myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.releaseYear = Integer.valueOf(myTitleOmdb.year());
+        this.minutesTime = Integer.valueOf(myTitleOmdb.runtime().substring(0, 2));
+    }
 
     public void infoTitle() {
         System.out.println("Nome: " + name);
@@ -80,7 +89,14 @@ public class Title {
     }
 
     @Override
+    public int compareTo(Title otherTitle) {
+        return this.getName().compareTo(otherTitle.getName());
+    }
+
+    @Override
     public String toString() {
-        return name + " (" + releaseYear + ")";
+
+        return "Nome: '" + name + '\'' +
+                ", Ano de Lançamento: " + releaseYear + "," + "Duração:" + minutesTime;
     }
 }
