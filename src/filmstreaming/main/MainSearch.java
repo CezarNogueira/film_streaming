@@ -21,28 +21,31 @@ public class MainSearch {
         var search = read.nextLine();
         String adress = "http://www.omdbapi.com/?t=" + search + "&apikey=a3d93235";
 
-        HttpClient client = HttpClient.newHttpClient();
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(adress))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String json = response.body();
-        System.out.println(json);
-
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-
-        OmdbTitle myTitleOmdb = gson.fromJson(json, OmdbTitle.class);
-        System.out.println(myTitleOmdb);
         try {
+            HttpClient client = HttpClient.newHttpClient();
+
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(adress))
+                    .build();
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+
+            String json = response.body();
+            System.out.println(json);
+
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+
+            OmdbTitle myTitleOmdb = gson.fromJson(json, OmdbTitle.class);
+            System.out.println(myTitleOmdb);
+
             Title myTitle = new Title(myTitleOmdb);
             System.out.println(myTitle);
         } catch (NumberFormatException e) {
-            System.out.println("Erro: " + e.getMessage());
+            System.out.println("❌ Erro na Formatação: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("❌ Erro de Argumento na Busca: " + e.getMessage());
         }
 
-        System.out.println("🤖 Programa finalizado com sucesso!");
+        System.out.println("🤖 Programa finalizado!");
     }
 }
