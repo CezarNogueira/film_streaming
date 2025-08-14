@@ -19,7 +19,7 @@ public class MainSearch {
         Scanner read = new Scanner(System.in);
         System.out.println("Digite um Filme para Buscar: ");
         var search = read.nextLine();
-        String adress = "http://www.omdbapi.com/?t=" + search + "&apikey=a3d93235";
+        String adress = "http://www.omdbapi.com/?t=" + search.replace(" " , "+") + "&apikey=a3d93235";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
