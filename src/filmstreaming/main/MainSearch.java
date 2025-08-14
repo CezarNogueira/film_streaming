@@ -4,6 +4,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
+import filmstreaming.exception.ExcessCharacterErrorException;
 import filmstreaming.model.OmdbTitle;
 import filmstreaming.model.Title;
 
@@ -44,6 +45,8 @@ public class MainSearch {
             System.out.println("❌ Erro na Formatação: " + e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println("❌ Erro de Argumento na Busca: " + e.getMessage());
+        } catch (ExcessCharacterErrorException e) {
+            System.out.println("❌ Erro: " + e.getMessage());
         }
 
         System.out.println("🤖 Programa finalizado!");

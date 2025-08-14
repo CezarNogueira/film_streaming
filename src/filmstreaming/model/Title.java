@@ -1,15 +1,14 @@
 package filmstreaming.model;
 
 import com.google.gson.annotations.SerializedName;
+import filmstreaming.exception.ExcessCharacterErrorException;
 
 public class Title implements Comparable<Title> {
     public Title(String name, int releaseYear) {
         this.name = name;
         this.releaseYear = releaseYear;
     }
-    @SerializedName("Title")
     private String name;
-    @SerializedName("Year")
     private int releaseYear;
     private boolean includePlan;
     private int allRating;
@@ -19,6 +18,10 @@ public class Title implements Comparable<Title> {
 
     public Title(OmdbTitle myTitleOmdb) {
         this.name = myTitleOmdb.title();
+
+        if (myTitleOmdb.year().length() > 4) {
+            throw new ExcessCharacterErrorException("Não Consigo converter pois ano tem mais de 4 caracteres");
+        }
         this.releaseYear = Integer.valueOf(myTitleOmdb.year());
         this.minutesTime = Integer.valueOf(myTitleOmdb.runtime().substring(0, 2));
     }
