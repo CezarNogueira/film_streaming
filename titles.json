@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Dogville",
+    "ReleaseYear": 2003,
+    "IncludePlan": false,
+    "AllRating": 0,
+    "MeanRating": 0.0,
+    "SumRating": 0.0,
+    "MinutesTime": 17
+  },
+  {
+    "Name": "Top Gun",
+    "ReleaseYear": 1986,
+    "IncludePlan": false,
+    "AllRating": 0,
+    "MeanRating": 0.0,
+    "SumRating": 0.0,
+    "MinutesTime": 10
+  }
+]
